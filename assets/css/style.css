@@ -20,14 +20,16 @@ html {
 body {
   padding: 2rem;
   background-color: var(--color-background);
+  margin: 0 auto;
 }
 
 img {
   width: 100%;
 }
 
-a {
-  text-decoration: none;
+a { 
+  font-weight: 700;
+  color: var(--color-gray);
 }
 
 .header {
@@ -67,11 +69,12 @@ a {
 .main__team {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  column-gap: 2.7rem;
 }
 
 .team__card {
+  display: flex;
   max-width: max-content;
-  position: relative;
   margin-bottom: 6.4rem;
 }
 
@@ -80,17 +83,12 @@ a {
   font-size: 1rem;
   font-weight: 400;
   text-transform: uppercase;
-  transform: rotate(90deg);
-  width: 13rem;
-  position: absolute;
-  left: 8rem;
-  bottom: 16.2rem;
+  writing-mode: vertical-rl;
 }
 
-.card__photo {
-  width: 13.8rem;
-  height: 20.9rem;
-}
+/* .card__photo {
+
+} */
 
 .card__name {
   font-family: "Poppins", sans-serif;
@@ -98,6 +96,70 @@ a {
   font-weight: 600;
 }
 
-.hola {
+.main__team div:nth-child(even){
+  margin-top: 5rem;
+}
+
+.main__team div:nth-child(odd){
+  margin-bottom: -4rem;
+}
+
+.footer{
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--color-gray);
+  text-align: center;
+  margin-top: 13.4rem;
+}
+
+@media (min-width: 768px) {
+
+  body{
+    max-width: 100rem;
+  }
+
+  .header{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .header__description{
+    font-size: 1.8rem;
+    width: 44rem;
+    margin: 0;
+  }
+
+  .description__text {
+    font-size: 1.8rem;
+  }
+
+  .main__team {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5rem;
+  }
+
+  .main__team 
+  div:nth-child(even),
+  div:nth-child(odd){
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+  }
   
+  .main__team div:nth-child(3n+2){
+    margin-top: 8rem;
+  }
+
+  .card__name{
+    font-size: 1.8rem;
+  }
+
+  .card__title{
+    font-size: 1.2rem;
+  }
+
+  .footer{
+    margin-top: 26.8rem;
+  }
 }
